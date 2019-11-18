@@ -1,0 +1,38 @@
+<html lang="en">
+<head>
+    <title>Spread Operator</title>
+</head>
+<body>
+<script>
+    let front = ['react', 'vue', 'angular'];
+    let back = ['python', 'ruby', 'nodeJs'];
+
+    //Using ES5
+
+    let fullStackEs5 = [];
+    fullStackEs5 = fullStackEs5.concat(front);
+    fullStackEs5.push('RxJs');
+    fullStackEs5 = fullStackEs5.concat(back);
+    console.log(fullStackEs5);
+
+    //Using ES6
+    let fullStack = [...front, 'RxJs', ...back];
+    console.log(fullStack);
+
+
+    //Both code have same result
+</script>
+
+<script>
+    // Spread inside of function
+    function makeSandwich(bread, cheese, sauce) {
+        console.log(`Your sandwich with ${bread} bread, ${cheese} cheese and ${sauce} is done!`);
+    }
+
+    let ingredients = ['white', 'cheddar', 'barbecue'];
+
+    makeSandwich(...ingredients);
+</script>
+
+</body>
+</html>
