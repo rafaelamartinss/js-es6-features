@@ -1,0 +1,78 @@
+<html lang="pt-br">
+<head>
+    <title>Array Methods</title>
+</head>
+<body>
+    <ul id="list">
+        <li>Rafaela</li>
+        <li>Uigor</li>
+        <li>William</li>
+    </ul>
+
+</body>
+<script>
+    //Array From
+    const text = 'Rafaela';
+    // console.log(Array.from(text));
+
+    const list = document.querySelectorAll('#list li');
+    const listArray = Array.from(list);
+    const names = listArray.map(name => name.textContent);
+
+    // console.log(names);
+</script>
+
+<script>
+    //Array Of
+    const array = Array.of(1, 5, 'Rafa', {name: 'Leal'});
+
+    // console.log(array);
+</script>
+
+<script>
+    //Array Find
+    const sampleArray = [4, -5, 0, -1];
+    const data = [
+        {
+            name: 'Rafa',
+            age: 19
+        },
+        {
+            name: 'Uigor',
+            age: 22
+        }
+    ];
+
+    // Retorna o ITEM (o primeiro que ele achar) do Array que se encaixa na condição;
+    const underZero = sampleArray.find(x => x < 0);
+    console.log(`Item do Array Simples = ${underZero}.`);
+
+    // Retorna o INDEX do item (o primeiro que ele achar) do Array que se encaixa na condição;
+    const underZeroIndex = sampleArray.findIndex(x => x < 0);
+    console.log(`Index do item do Array Simples = ${underZeroIndex}.`);
+
+    const rafa = data.find(person => person.name === 'Rafa');
+    const rafaIndex = data.findIndex(person => person.name === 'Rafa');
+
+    console.log(rafa);
+    console.log(`Index do item do Array = ${rafaIndex}.`);
+</script>
+
+<script>
+    //Array Fill
+
+    // Preenche o array completo com 'lol
+    const arrayAllFill = new Array(50);
+    arrayAllFill.fill('lol');
+    console.log(arrayAllFill);
+
+    //Preenche com 'lol' do 3 ao 5.
+    const arr = new Array(50);
+    arr.fill('lol', 3, 6);
+    console.log(arr);
+
+    const newArr = [1, 2, 3, 4, 5, 6];
+    newArr.fill(54, 1, 4);
+    console.log(newArr);
+</script>
+</html>
