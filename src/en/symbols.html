@@ -1,0 +1,36 @@
+<html lang="en">
+<head>
+    <title>Symbols</title>
+</head>
+<body></body>
+<script>
+    let foo = Symbol('name');
+    let bar = Symbol('name');
+
+    // Return false
+    // console.log(foo === bar);
+
+    let obj = {
+        [Symbol('name')]: 'Rafa',
+        [Symbol('age')]: 19,
+        city: 'Imperatriz'
+    };
+
+    const symbols = Object.getOwnPropertySymbols(obj);
+    const data = symbols.map(sym => obj[sym]);
+    console.log(data);
+
+</script>
+<script>
+    // Using iterators, iterables and for...of
+
+    let text = 'United Kingdom';
+    let it = text[Symbol.iterator]();
+    let letter;
+
+    for(letter of text) {
+        console.log(letter);
+        if(letter === 'e') break;
+    }
+</script>
+</html>
