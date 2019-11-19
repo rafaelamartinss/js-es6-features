@@ -1,87 +1,88 @@
-# Project Title
+# ES6 Features
+Uma coleção de funcionalidades do ES6 (ECMAScript 2015). Essa lista foi inspirada no curso do [Willian Justen](https://github.com/willianjusten), 
+[JS com TDD na Prática](https://www.udemy.com/course/js-com-tdd-na-pratica/).
 
-One Paragraph of project description goes here
+*Leia em outros idiomas: [English](README.en.md).
 
-## Getting Started
+## Funcionalidades
+  - [Array](#array)
+    - [Recomendações](#recomendações)
+    - [Array From](#array.from)
+    - [Array Fill](#array.fill)
+    - [Array Of](#array.of)
+    - [Array Find](#array.find)
+    - [Array FindIndex](#array.findIndex)
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+## Array
+Antes de tudo, quando usamos array? O array é recomendado quando se quer criar coleções ordenadas, em única variável,
+onde seus items podem ser acessados por sua posição númerica na lista. 
 
-### Prerequisities
+### Recomendações
 
-What things you need to install the software and how to install them
+- [Mais sobre os métodos](https://exploringjs.com/es6/ch_arrays.html#sec_new-static-array-methods) (inglês)
+- [Array vs. Objeto](https://dev.to/zac_heisey/objects-vs-arrays-2g0e) (inglês)
 
-```
-Give examples
-```
-
-### Installing
-
-A step by step series of examples that tell you have to get a development env running
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
+### Array.from
+Esse método retorna um array de qualquer objeto com a propriedade *length* ou que seja uma objeto iterável. 
+Ainda dentro desse método é possível já mapear o array que será retornado.
 
 ```
-Give an example
+let arr = Array.from(object, mapFunction, thisValue);
 ```
-
-### And coding style tests
-
-Explain what these tests test and why
-
+#### Exemplos
+##### Array from com string
 ```
-Give an example
+let arr = Array.from('github');
+
+// ['g', 'i', 't', 'h', 'u', 'b']
 ```
+##### Array from usando o método map
+```
+let arr = Array.from([1, 2, 3], x => x + x);
 
-## Deployment
+// [2, 4, 6] 
+```
+*More about: [Array.from()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from)*
+### Array.fill
+Preenche todos os elementos de um array com um valor estático, começando pelo primeiro elemento, de index 0, e terminando no último, 
+por padrão. Retorna o array modificado.
+```
+const sandwich = ['cheese', 'bread', 'meat'];
 
-Add additional notes about how to deploy this on a live system
+sandwich.fill('tomato');
+// ['tomato', 'tomato', 'tomato']
+```
+ É possível especificar as posições de ínicio e fim.
+ 
+ ```
+ const nums = [3, 4, 5, 7, 8];
+ 
+ nums.fill(0, 1, 3);
+ // [3, 0, 0, 7, 8]
+ ```
 
-## Built With
+*More about: [Array.fill()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/fill)*
+### Array.of
+Cria um novo array de acordo com os argumentos passados, independente do tipo dos argumentos;
+```
+const array = Array.of(1, 5, 'Jhon', {name: 'Doe'});
+// [1, 5, "Jhon", {name: "Doe"}] 
+```
+*More about: [Array.of()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/of)*
+### Array.find
+O método *find* retorna o valor do primeiro elemento que satifaz as condições definidas na função de teste.
+```
+const years = [2019, 2020, 2021, 2022];
 
-* Dropwizard - Bla bla bla
-* Maven - Maybe
-* Atom - ergaerga
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
-
-## Authors
-
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone who's code was used
-* Inspiration
-* etc
+const yearFound = years.find(item => item > 2020);
+// 2019  
+```
+*More about: [Array.find()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find)*
+### Array.findIndex
+To view all commits on a repo by author add to the URL.
+```
+const sampleArray = [4, -5, 0, -1];
+const underZeroIndex = sampleArray.findIndex(x => x < 0);
+// 1
+```
+*More about:[]()*
