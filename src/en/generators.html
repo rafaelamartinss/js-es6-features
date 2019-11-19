@@ -1,0 +1,40 @@
+<html lang="en">
+<head>
+    <title>Classes</title>
+</head>
+<body></body>
+<script>
+    function* genNames() {
+        console.log('calling the first name!');
+        yield 'Willian';
+        console.log('calling the second name!');
+        yield 'Rafaela';
+        console.log('calling the third name!');
+        yield 'Uigor';
+    }
+
+    const names = genNames();
+    // console.log(names.next());
+</script>
+<script>
+    function ajax(url) {
+        fetch(url)
+            .then(data => data.json())
+            .then(data => users.next(data));
+    }
+
+    function* ajaxGen() {
+        console.log("Searching Rafaela's data");
+        const rafaela = yield ajax('https://api.github.com/users/rafaelamartinss');
+        console.log(rafaela);
+
+        console.log("Searching Willian's data");
+        const willian = yield ajax('https://api.github.com/users/willianjusten');
+        console.log(willian);
+    }
+
+    const users = ajaxGen();
+    users.next();
+</script>
+
+</html>
