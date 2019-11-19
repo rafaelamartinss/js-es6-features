@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+    <title>Proxies</title>
+</head>
+<body>
+<script>
+    let obj = {
+        name: 'Rafaela',
+        age: 19
+    };
+
+    let proxy = new Proxy(obj, {
+        get(target, name) {
+            console.log('Someone is requesting the name!');
+            return target[name];
+        },
+
+        set(target, name, value) {
+            console.log(`Someone is changing the name!`);
+            console.log(target);
+            target[name] = value.toUpperCase();
+        }
+    });
+</script>
+
+</body>
+</html>
