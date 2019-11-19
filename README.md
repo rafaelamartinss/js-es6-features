@@ -26,27 +26,27 @@ onde seus items podem ser acessados por sua posição númerica na lista.
 Esse método retorna um array de qualquer objeto com a propriedade *length* ou que seja uma objeto iterável. 
 Ainda dentro desse método é possível já mapear o array que será retornado.
 
-```
+```javascript
 let arr = Array.from(object, mapFunction, thisValue);
 ```
 #### Exemplos
 ##### Array from com string
-```
+```javascript
 let arr = Array.from('github');
 
 // ['g', 'i', 't', 'h', 'u', 'b']
 ```
 ##### Array from usando o método map
-```
+```javascript
 let arr = Array.from([1, 2, 3], x => x + x);
 
 // [2, 4, 6] 
 ```
-*More about: [Array.from()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from)*
+*Mais sobre: [Array.from()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from)*
 ### Array.fill
 Preenche todos os elementos de um array com um valor estático, começando pelo primeiro elemento, de index 0, e terminando no último, 
 por padrão. Retorna o array modificado.
-```
+```javascript
 const sandwich = ['cheese', 'bread', 'meat'];
 
 sandwich.fill('tomato');
@@ -54,35 +54,37 @@ sandwich.fill('tomato');
 ```
  É possível especificar as posições de ínicio e fim.
  
- ```
+ ```javascript
  const nums = [3, 4, 5, 7, 8];
  
  nums.fill(0, 1, 3);
  // [3, 0, 0, 7, 8]
  ```
 
-*More about: [Array.fill()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/fill)*
+*Mais sobre: [Array.fill()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/fill)*
 ### Array.of
 Cria um novo array de acordo com os argumentos passados, independente do tipo dos argumentos;
-```
+```javascript
 const array = Array.of(1, 5, 'Jhon', {name: 'Doe'});
+
 // [1, 5, "Jhon", {name: "Doe"}] 
 ```
-*More about: [Array.of()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/of)*
+*Mais sobre: [Array.of()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/of)*
 ### Array.find
 O método *find* retorna o valor do primeiro elemento que satifaz as condições definidas na função de teste.
-```
+```javascript
 const years = [2019, 2020, 2021, 2022];
-
 const yearFound = years.find(item => item > 2020);
+
 // 2019  
 ```
-*More about: [Array.find()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find)*
+*Mais sobre: [Array.find()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find)*
 ### Array.findIndex
-To view all commits on a repo by author add to the URL.
-```
+Retorna o valor do index do primeiro elemento que satifaz as condições definidas na função de teste.
+
+```javascript
 const sampleArray = [4, -5, 0, -1];
 const underZeroIndex = sampleArray.findIndex(x => x < 0);
 // 1
 ```
-*More about:[]()*
+*Mais sobre: [Array.findIndex()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex)*
