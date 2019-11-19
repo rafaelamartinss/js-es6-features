@@ -1,0 +1,38 @@
+<html lang="en">
+<head>
+    <title>Promises</title>
+</head>
+<body>
+<script>
+    let defer = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            if(true) {
+                resolve('Hello!');
+            } else {
+                reject('Error!');
+            }
+        }, 1000);
+    });
+
+    defer
+        .then(data => {
+            console.log(data);
+            return 'foo';
+        })
+        .then(data => console.log(data))
+        .catch(err => console.log(err));
+</script>
+
+<script>
+    let posts = fetch('https://willianjusten.com.br/search.json');
+
+    posts
+        .then(data => data.json())
+        .then(data => data.reduce((total, value) => {
+            console.log(total);
+        }))
+        .catch(err => console.error(err));
+</script>
+
+</body>
+</html>
