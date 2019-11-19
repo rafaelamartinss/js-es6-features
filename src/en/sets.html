@@ -1,0 +1,40 @@
+<html lang="en">
+<head>
+    <title>Sets</title>
+</head>
+<body>
+<script>
+    let mySet = new Set(['willian', 'leal', 'rafaela']);
+
+    mySet.add('hillary');
+    mySet.add('leal');
+
+    mySet.delete('willian');
+
+    console.log(mySet.has('rafaela'));
+
+    let it = mySet.values();
+    console.log(it.next());
+
+    for(let name of it) {
+        console.log(name);
+    }
+</script>
+
+<script>
+    //WeakSet
+    let obj1 = {
+        name: 'Uigor',
+        age: 22
+    };
+    let obj2 = {
+        name: 'Rafaela',
+        age: 19
+    };
+
+    let ws = new WeakSet([obj1, obj2]);
+</script>
+
+
+</body>
+</html>

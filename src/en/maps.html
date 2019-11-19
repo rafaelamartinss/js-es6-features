@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+    <title>Maps</title>
+</head>
+<body>
+<script>
+    let m = new Map();
+
+    m.set('Willian', 24);
+    m.set('Rafaela', 19);
+    m.set('Uigor', 22);
+</script>
+<script>
+    //WeakMap
+    let obj1 = {
+        name: 'Uigor',
+        age: 22
+    };
+    let obj2 = {
+        name: 'Rafaela',
+        age: 19
+    };
+
+    let wm = new WeakMap();
+
+    wm.set(obj2, 'Willian');
+    wm.set(obj1, 'Rafaela');
+</script>
+
+</body>
+</html>
+
