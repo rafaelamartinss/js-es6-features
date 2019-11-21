@@ -6,21 +6,23 @@ Uma coleção de funcionalidades do ES6 (ECMAScript 2015). Essa lista foi inspir
 
 ## Funcionalidades
   - [Array](#array)
-    - [Recomendações](#recomendações)
+  - [Recomendações](#recomendações)
     - [Array From](#array.from)
     - [Array Fill](#array.fill)
     - [Array Of](#array.of)
     - [Array Find](#array.find)
     - [Array FindIndex](#array.findIndex)
+  - [Shorthand ](#shorthand)
+
+
+
+## Recomendações
+- [Mais sobre os métodos](https://exploringjs.com/es6/ch_arrays.html#sec_new-static-array-methods) (inglês)
+- [Array vs. Objeto](https://dev.to/zac_heisey/objects-vs-arrays-2g0e) (inglês)
 
 ## Array
 Antes de tudo, quando usamos array? O array é recomendado quando se quer criar coleções ordenadas, em única variável,
 onde seus items podem ser acessados por sua posição númerica na lista. 
-
-### Recomendações
-
-- [Mais sobre os métodos](https://exploringjs.com/es6/ch_arrays.html#sec_new-static-array-methods) (inglês)
-- [Array vs. Objeto](https://dev.to/zac_heisey/objects-vs-arrays-2g0e) (inglês)
 
 ### Array.from
 Esse método retorna um array de qualquer objeto com a propriedade *length* ou que seja uma objeto iterável. 
@@ -88,3 +90,25 @@ const underZeroIndex = sampleArray.findIndex(x => x < 0);
 // 1
 ```
 *Mais sobre: [Array.findIndex()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex)*
+
+## Shorthand
+Em tradução direta o "código abreviado" é um conjunto de técnicas, para tornar funções, 
+validações, atribuição para propriedades de objetos, e muito mais, menores.
+Um exemplo disso é o if...else.
+```javascript
+let egg;
+
+if (x > 10) {
+  egg = true;
+} else {
+  egg = false;
+}
+
+//Abreviado (Shorthand)
+let egg = (x > 10) ? true : false;
+
+// ou ainda
+let egg = (x > 10);
+```
+
+*Mais sobre: [Javascript Shorthand Coding Techniques](https://gist.github.com/pongstr/9f273cdfbd5b600bc758)*
