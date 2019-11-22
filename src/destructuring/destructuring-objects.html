@@ -1,16 +1,9 @@
 <html lang="pt-br">
 <head>
-    <title>Desestruturação de Objetos</title>
+    <title>Desestructuring Objects</title>
 </head>
 <body>
 <script>
-    // O destructuring (nome em inglês) possibilita acessar as propriedades de um objeto de maneira mais limpa
-    // Esse código é equivalente ao algo como:
-    // const name = data.name;
-    // const surname = data.surname;
-    // const twitter = data.social.twitter;
-
-
     const data = {
         name: 'Rafaela',
         surname: 'Leal',
@@ -31,17 +24,11 @@
         Meu twitter é: ${tt}
     `);
 
-    // ATENÇÃO: O código abaixo não cria uma nova propriedade chamada
-    // facebook, apenas renderiza no console. Observe isso na impressão
-    // de data no console.
     let {facebook = '/rafaelamartinss'} = data.social;
     console.log(`E criei recentemente meu facebook, que é: ${facebook}`);
 
     console.log(data);
 
-    // Também é possível utilizar esse recurso em Arrays, usando os [] no
-    // lugar das {}. Observe que ele a atribuição de valores para as variáveis
-    // ocorre de acordo com a ordem do array.
     const dataArray = ['Rafaela', 'Martins', 'Imperatriz'];
     const [nameArray, surnameArray, city] = dataArray;
     console.log(`Nome: ${nameArray} ${surnameArray}. Cidade: ${city}.`)

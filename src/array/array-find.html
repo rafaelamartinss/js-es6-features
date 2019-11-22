@@ -1,0 +1,43 @@
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Array Find and Find Index</title>
+</head>
+<body></body>
+
+<script>
+    //Array Find
+    console.log('-------- Array Find --------');
+    const sampleArray = [4, -5, 0, -1];
+    const data = [
+        {
+            name: 'Rafa',
+            age: 19
+        },
+        {
+            name: 'Uigor',
+            age: 22
+        }
+    ];
+
+    const underZero = sampleArray.find(x => x < 0);
+    console.log(`Item of Array = ${underZero}.`);
+
+    const rafa = data.find(person => person.name === 'Rafa');
+
+    console.log(rafa);
+</script>
+
+<script>
+    //Array FindIndex
+    const numbers = [4, -5, 0, -1];
+
+    console.log('-------- Array FindIndex --------');
+
+    const underZeroIndex = numbers.findIndex(x => x < 0);
+    console.log(`Index's item of Array = ${underZeroIndex}.`);
+
+    const rafaIndex = data.findIndex(person => person.name === 'Rafa');
+    console.log(`Index do item do Array = ${rafaIndex}.`);
+</script>
+</html>
